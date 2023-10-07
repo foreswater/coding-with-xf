@@ -38,6 +38,24 @@ node* pro1(node* head, node* p, node* q) {
 	}
 	return head;
 }
+node* path(node* head, node* q,vector<node>& pat) {
+	if (head == NULL) {
+		return head;
+	}
+	if (head == q) {
+		pat.push_back(*head);
+		return head;
+	}
+	node* le = path(head->left, q, pat);
+	node* ri = path(head->right, q, pat);
+	if (le||ri) {
+		pat.push_back(*head);
+		return q;
+	}
+	else {
+		return NULL;
+	}
+}
 int main() {
 	node tree;
 	node* root = &tree;
