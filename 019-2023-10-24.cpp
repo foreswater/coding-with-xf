@@ -57,8 +57,8 @@ int dp1(int m, int n) {
 	for (int i = 0; i < m ; i++) {
 		f[i + 1][0] = i + 1;
 	}
-	for (int j = 0; j < n + 1; j++) {
-		f[0][j] = j;
+	for (int j = 0; j < n ; j++) {
+		f[0][j + 1] = j + 1;
 	}
 	for (int i = 0; i < m ; i++) {
 		for (int j = 0; j < n; j++) {
